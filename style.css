@@ -16757,9 +16757,32 @@ label.radio, label.checkbox {
 	animation-name: fadeOutUpSmall;
 }
 
+
+/* My Styles  */
+
 #particles-nasa {
 	position: absolute;
 	z-index: 10;
 	width: 100vw;
-	height:900px;
+	height:750px;
+}
+
+.custom-shape-divider-top-1624603898 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1624603898 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 151px;
+}
+
+.custom-shape-divider-top-1624603898 .shape-fill {
+    fill: #212529;
 }
