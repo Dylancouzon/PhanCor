@@ -16760,6 +16760,7 @@ label.radio, label.checkbox {
 
 /* My Styles  */
 
+/* Particles */
 #particles-nasa {
 	position: absolute;
 	z-index: 10;
@@ -16767,6 +16768,8 @@ label.radio, label.checkbox {
 	height:750px;
 }
 
+
+/* Shape dividers */
 .custom-shape-divider-top-1624603898 {
     position: absolute;
     top: 0;
@@ -16785,4 +16788,32 @@ label.radio, label.checkbox {
 
 .custom-shape-divider-top-1624603898 .shape-fill {
     fill: #212529;
+}
+
+
+.custom-shape-divider-bottom-1624604948 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1624604948 svg {
+    position: relative;
+    display: block;
+    width: calc(123% + 1.3px);
+    height: 99px;
+}
+
+.custom-shape-divider-bottom-1624604948 .shape-fill {
+    fill: #383838;
+}
+
+/* Makes the Icons bigger on mouseover */
+i:hover {
+	transition: transform .2s; 
+	transform: scale(2);
 }
