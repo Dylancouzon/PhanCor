@@ -366,7 +366,7 @@ h1 .subtitle {
   -webkit-transition: all 0.2s;
 }
 .wizard-card .choice i {
-  font-size: 30px;
+  font-size: 70px;
   line-height: 111px;
 }
 .wizard-card .choice:hover .icon, .wizard-card .choice.active .icon {
@@ -646,8 +646,8 @@ h1 .subtitle {
   border-color: #05AE0E;
 }
 .btn-fill.btn-warning {
-  background-color: #FF9500;
-  border-color: #FF9500;
+  background-color: #E12A7A;
+  border-color: #E12A7A;
 }
 .btn-fill.btn-warning:hover, .btn-fill.btn-warning:focus, .btn-fill.btn-warning:active, .btn-fill.btn-warning.active, .open .dropdown-toggle .btn-fill.btn-warning {
   background-color: #ED8D00;

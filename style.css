@@ -9126,11 +9126,7 @@ body:not(.device-touch) .button.button-full strong {
 	margin-top: 0;
 }
 
-.fbox-icon {
-	width: 5.5rem;
-	height: 4rem;
-	padding: 0 0.75rem;
-}
+
 
 .fbox-icon a, .fbox-icon i, .fbox-icon img {
 	display: block;
@@ -9384,7 +9380,7 @@ body:not(.device-touch) .button.button-full strong {
 }
 
 .fbox-plain .fbox-icon i {
-	font-size: 3rem;
+	font-size: 4rem;
 	line-height: 1;
 }
 
@@ -16813,7 +16809,7 @@ label.radio, label.checkbox {
 }
 
 /* Makes the Icons bigger on mouseover */
-i:hover {
+.fbox-plain .fbox-icon i:hover {
 	transition: transform .2s; 
 	transform: scale(2);
 }
