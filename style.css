@@ -3328,7 +3328,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 }
 
 .menu-item:hover>.menu-link, .menu-item.current>.menu-link {
-	color: #1ABC9C;
+	color: #F3317A;
 }
 
 .menu-item.sub-menu>.menu-link>div {}
@@ -16783,7 +16783,7 @@ label.radio, label.checkbox {
 }
 
 .custom-shape-divider-top-1624603898 .shape-fill {
-    fill: #212529;
+    fill: #FFFFFF;
 }
 
 
@@ -16805,7 +16805,7 @@ label.radio, label.checkbox {
 }
 
 .custom-shape-divider-bottom-1624604948 .shape-fill {
-    fill: #383838;
+    fill: #FFFFFF;
 }
 
 /* Makes the Icons bigger on mouseover */
