@@ -546,6 +546,11 @@
 					</div>
 					<!-- World Map -->
 					<div class="container clearfix">
+						<div class="heading-block center mt-5 pt-3 mx-auto border-bottom-0 clearfix"
+							style="max-width: 700px">
+							<h2>We provide best services for you.</h2>
+							<p>Our customers come from all around the world:</p>
+						</div>
 						<div id="chartdiv"></div>
 					</div>
 
@@ -1199,63 +1204,62 @@
 	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 	<script>
 		am4core.ready(function () {
-/**
- * This is a demo for MapChart.
- * 
- * Refer to the following link(s) for reference:
- * @see {@link https://www.amcharts.com/docs/v4/chart-types/map/}
- */
+			/**
+			 * This is a demo for MapChart.
+			 * 
+			 * Refer to the following link(s) for reference:
+			 * @see {@link https://www.amcharts.com/docs/v4/chart-types/map/}
+			 */
 
-// Set themes
-am4core.useTheme(am4themes_animated);
+			// Set themes
+			am4core.useTheme(am4themes_animated);
 
-// Create the map chart
-var chart = am4core.create("chartdiv", am4maps.MapChart);
+			// Create the map chart
+			var chart = am4core.create("chartdiv", am4maps.MapChart);
 
-// Check if proper geodata is loaded
-try {
-  chart.geodata = am4geodata_worldLow;
-}
-catch (e) {
-  chart.raiseCriticalError({
-    "message": "Map geodata could not be loaded. Please download the latest <a href=\"https://www.amcharts.com/download/download-v4/\">amcharts geodata</a> and extract its contents into the same directory as your amCharts files."
-  });
-}
+			// Check if proper geodata is loaded
+			try {
+				chart.geodata = am4geodata_worldLow;
+			}
+			catch (e) {
+				chart.raiseCriticalError({
+					"message": "Map geodata could not be loaded. Please download the latest <a href=\"https://www.amcharts.com/download/download-v4/\">amcharts geodata</a> and extract its contents into the same directory as your amCharts files."
+				});
+			}
 
-// Set projection to be used
-// @see {@link https://www.amcharts.com/docs/v4/reference/mapchart/#projection_property}
-chart.projection = new am4maps.projections.Miller();
+			// Set projection to be used
+			// @see {@link https://www.amcharts.com/docs/v4/reference/mapchart/#projection_property}
+			chart.projection = new am4maps.projections.Miller();
 
-// Create polygon series
-var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
-polygonSeries.useGeodata = true;
-polygonSeries.exclude = ["AQ"]; // Exclude Antractica
-polygonSeries.tooltip.fill = am4core.color("#000000");
+			// Create polygon series
+			var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+			polygonSeries.useGeodata = true;
+			polygonSeries.exclude = ["AQ"]; // Exclude Antractica
+			polygonSeries.tooltip.fill = am4core.color("#000000");
 
-var colorSet = new am4core.ColorSet();
+			var colorSet = new am4core.ColorSet();
 
-// Configure polygons
-var polygonTemplate = polygonSeries.mapPolygons.template;
-polygonTemplate.tooltipText = "{name}";
-polygonTemplate.togglable = true;
-const countries = [28, 219, 191, 181, 242, 21]
-polygonTemplate.adapter.add("fill", function(fill, target) {
-console.log(target.dataItem.index)
+			// Configure polygons
+			var polygonTemplate = polygonSeries.mapPolygons.template;
+			polygonTemplate.tooltipText = "{name}";
+			polygonTemplate.togglable = true;
+			const countries = [28, 219, 191, 181, 242, 21]
+			polygonTemplate.adapter.add("fill", function (fill, target) {
 
-if (countries.includes(target.dataItem.index)) {
-  return chart.colors.getIndex(2);
-}
-return fill;
-})
+				if (countries.includes(target.dataItem.index)) {
+					return chart.colors.getIndex(2);
+				}
+				return fill;
+			})
 
-// Configure "hover" state
-var hoverState = polygonTemplate.states.create("hover");
-hoverState.properties.fill = colorSet.getIndex(0);
+			// Configure "hover" state
+			var hoverState = polygonTemplate.states.create("hover");
+			hoverState.properties.fill = colorSet.getIndex(0);
 
-// Disable zoom and pan
-chart.maxZoomLevel = 1;
-chart.seriesContainer.draggable = false;
-chart.seriesContainer.resizable = false;
+			// Disable zoom and pan
+			chart.maxZoomLevel = 1;
+			chart.seriesContainer.draggable = false;
+			chart.seriesContainer.resizable = false;
 
 		}); // end am4core.ready()
 	</script>
