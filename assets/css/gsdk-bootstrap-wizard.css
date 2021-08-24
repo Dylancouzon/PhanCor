@@ -320,6 +320,7 @@ h1 .subtitle {
   font-weight: 500;
 }
 .wizard-card[data-color="red"] .choice:hover .icon, .wizard-card[data-color="red"] .choice.active .icon {
+  border-width: 0.5rem;
   border-color: #F1267E;
 }
 .wizard-card[data-color="red"] .picture:hover {
