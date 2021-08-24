@@ -9,13 +9,13 @@ particlesJS('particles-nasa',
         }
       },
       "color": {
-        "value": "#ffffff"
+        "value": "#30343F"
       },
       "shape": {
         "type": "circle",
         "stroke": {
           "width": 0,
-          "color": "#000000"
+          "color": "#30343F"
         },
         "polygon": {
           "nb_sides": 5
@@ -49,7 +49,7 @@ particlesJS('particles-nasa',
       "line_linked": {
         "enable": false,
         "distance": 150,
-        "color": "#ffffff",
+        "color": "#30343F",
         "opacity": 0.4,
         "width": 1
       },

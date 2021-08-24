@@ -12,7 +12,7 @@
 	top: 5px;
 	left: 5px;
 	text-align: center;
-	background-color: rgba(68, 170, 172, 0.8);
+	background-color: #F3317A;
 	border: 1px solid #FFF;
 	border-radius: 100%;
 	cursor: pointer;
@@ -30,7 +30,7 @@
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
 	border-radius: 50%;
-	background: #44aaac;
+	background: #F3317A;
 	opacity: 0;
 	z-index: -1;
 	-webkit-animation: pulsate 3.5s ease-out infinite;
