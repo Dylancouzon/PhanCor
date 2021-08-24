@@ -1238,12 +1238,19 @@ var colorSet = new am4core.ColorSet();
 var polygonTemplate = polygonSeries.mapPolygons.template;
 polygonTemplate.tooltipText = "{name}";
 polygonTemplate.togglable = true;
+const countries = [28, 219, 191, 181, 242, 21]
+polygonTemplate.adapter.add("fill", function(fill, target) {
+console.log(target.dataItem.index)
 
+if (countries.includes(target.dataItem.index)) {
+  return chart.colors.getIndex(2);
+}
+return fill;
+})
 
 // Configure "hover" state
 var hoverState = polygonTemplate.states.create("hover");
 hoverState.properties.fill = colorSet.getIndex(0);
-
 
 // Disable zoom and pan
 chart.maxZoomLevel = 1;
@@ -1271,10 +1278,6 @@ chart.seriesContainer.resizable = false;
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 	<script>
-
-		jQuery(window).on('load', function () {
-			$('#hotspot-img').hotSpot();
-		});
 
 		// Contact form Submit
 
