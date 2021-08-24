@@ -544,136 +544,10 @@
 						</div>
 
 					</div>
-<!-- World Map -->
-						<div class="container clearfix">
-							<div id="worldMap" style="position: relative; width: 500px; height: 300px;"></div>
-							<div class="heading-block center mt-5 pt-3 mx-auto border-bottom-0 clearfix"
-								style="max-width: 700px">
-								<h2>We provide best services for you.</h2>
-								<p>People from all around the world visit our Websites</p>
-							</div>
-							<div class="row">
-								<div class="col-lg-5 col-md-6">
-									<div class="heading-block mt-md-3 mt-0">
-										<h3 class=" nott ls0">We provide our services in the following Locations:</h3>
-									</div>
-									<div class="row">
-										<div class="col-6">
-											<ul class="iconlist ms-0">
-												<li><img src="demos/hosting/images/flags/us.png" alt="US Flag"><a
-														href="#">Bay Area</a></li>
-												<li><img src="demos/hosting/images/flags/us.png" alt="US Flag"><a
-														href="#">Los Angeles</a></li>
-												<li><img src="demos/hosting/images/flags/us.png" alt="US Flag"><a
-														href="#">Seattle</a></li>
-												<li><img src="demos/hosting/images/flags/us.png" alt="US Flag"><a
-														href="#">Chicago</a></li>
-												<li><img src="demos/hosting/images/flags/us.png" alt="US Flag"><a
-														href="#">New York</a></li>
-											</ul>
-										</div>
-										<div class="col-6">
-											<ul class="iconlist ms-0">
-												<li><img src="demos/hosting/images/flags/ca.png" alt="Image"><a
-														href="#">Canada</a></li>
-												<li><img src="demos/hosting/images/flags/fr.png" alt="Image"><a
-														href="#">France</a></li>
-												<li><img src="demos/hosting/images/flags/au.png" alt="Image"><a
-														href="#">Australia</a></li>
-												<li><img src="demos/hosting/images/flags/uk.png" alt="Image"><a
-														href="#">UK</a></li>
-												<li><img src="demos/hosting/images/flags/sa.png" alt="Image"><a
-														href="#">Vietnam</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-7 col-md-6">
-									<div id="hotspot-img" class="hotspot-img mt-2 responsive-hotspot-wrap">
-										<img src="demos/hosting/images/svg/map.png" class="img-responsive" alt="Image">
-
-										
-										<div class="hot-spot" data-x="330" data-y="500">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>San Francisco</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="340" data-y="550">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Los Angeles</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="2350" data-y="1110">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Sydney</p>
-											</div>
-										</div>
-									
-										<div class="hot-spot" data-x="1222" data-y="385">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>London</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="1222" data-y="435">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Paris</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="2000" data-y="665">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Hanoi</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="325" data-y="450">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Seattle</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="590" data-y="450">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Chicago</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="710" data-y="395">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Toronto</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="725" data-y="355">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>Montreal</p>
-											</div>
-										</div>
-										
-										<div class="hot-spot" data-x="750" data-y="450">
-											<div class="circle"></div>
-											<div class="tooltip">
-												<p>New York</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-						</div>
+					<!-- World Map -->
+					<div class="container clearfix">
+						<div id="chartdiv"></div>
+					</div>
 
 				</div>
 
@@ -1310,8 +1184,74 @@
 	<script src="js/particles/particles.min.js"></script>
 	<script src="js/particles/particles-nasa.js"></script><!-- Particles Line -->
 
-	<script src="js/jquery.hotspot.js"></script>
-	<script src="js/components/rangeslider.min.js"></script> <!-- Hotspot component-->
+	<!-- World map scripts
+	============================================= -->
+	<style>
+		#chartdiv {
+			width: 100%;
+			height: 500px;
+		}
+	</style>
+	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/geodata/usaLow.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+	<script>
+		am4core.ready(function () {
+/**
+ * This is a demo for MapChart.
+ * 
+ * Refer to the following link(s) for reference:
+ * @see {@link https://www.amcharts.com/docs/v4/chart-types/map/}
+ */
+
+// Set themes
+am4core.useTheme(am4themes_animated);
+
+// Create the map chart
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+// Check if proper geodata is loaded
+try {
+  chart.geodata = am4geodata_worldLow;
+}
+catch (e) {
+  chart.raiseCriticalError({
+    "message": "Map geodata could not be loaded. Please download the latest <a href=\"https://www.amcharts.com/download/download-v4/\">amcharts geodata</a> and extract its contents into the same directory as your amCharts files."
+  });
+}
+
+// Set projection to be used
+// @see {@link https://www.amcharts.com/docs/v4/reference/mapchart/#projection_property}
+chart.projection = new am4maps.projections.Miller();
+
+// Create polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+polygonSeries.useGeodata = true;
+polygonSeries.exclude = ["AQ"]; // Exclude Antractica
+polygonSeries.tooltip.fill = am4core.color("#000000");
+
+var colorSet = new am4core.ColorSet();
+
+// Configure polygons
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}";
+polygonTemplate.togglable = true;
+
+
+// Configure "hover" state
+var hoverState = polygonTemplate.states.create("hover");
+hoverState.properties.fill = colorSet.getIndex(0);
+
+
+// Disable zoom and pan
+chart.maxZoomLevel = 1;
+chart.seriesContainer.draggable = false;
+chart.seriesContainer.resizable = false;
+
+		}); // end am4core.ready()
+	</script>
 
 
 	<!-- Contact form scripts
