@@ -5,7 +5,7 @@
 
 ## Project for a Web development agency [ON HOLD undefinitely]
 
-Please checkout the [demo!](https://dylancouzon.github.io/PhanCor/)
+[Demo link](https://dylancouzon.github.io/PhanCor/)
 
 ![PhanCor](./images/screenshot.png)
 
